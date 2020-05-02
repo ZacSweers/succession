@@ -41,6 +41,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = 'template-root'
-include 'template'
-include 'sample'
+rootProject.name = 'succession-root'
+include 'succession'
