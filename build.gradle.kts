@@ -23,8 +23,6 @@ plugins {
 }
 
 subprojects {
-  apply(from = rootProject.file("gradle/dependencies.gradle"))
-
   repositories {
     mavenCentral()
     jcenter()
@@ -46,7 +44,5 @@ subprojects {
 //    }
   }
 
-  apply(from = rootProject.file("gradle/config-spotless.gradle"))
+//  apply(from = rootProject.file("gradle/config-spotless.gradle"))
 }
-
-apply(from = "gradle/dependencies.gradle")

@@ -26,8 +26,21 @@ plugins {
 //  useLegacyMode = false
 //}
 
+apollo {
+  service("github") {
+    @Suppress("UnstableApiUsage")
+    customTypeMapping.set(mapOf(
+        "DateTime" to "java.time.Instant",
+        "URI" to "okhttp3.HttpUrl"
+    ))
+    generateKotlinModels.set(true)
+    rootPackageName.set("dev.zacsweers.succession")
+    schemaFile.set(file("src/main/graphql/dev/zacsweers/succession/schema.json"))
+  }
+}
+
 dependencies {
-  api("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  api("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
   implementation("com.apollographql.apollo:apollo-runtime:2.0.1")
   testImplementation("junit:junit:4.13")
   testImplementation("com.google.truth:truth:1.0.1")
