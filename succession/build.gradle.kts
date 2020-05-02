@@ -15,8 +15,9 @@
  */
 
 plugins {
-  id 'org.jetbrains.kotlin.jvm'
-  id 'org.jetbrains.dokka'
+  id("org.jetbrains.kotlin.jvm")
+  id("org.jetbrains.dokka")
+  id("com.apollographql.apollo")
   // TODO apply for uploading to maven central
 //  id 'com.vanniktech.maven.publish'
 }
@@ -26,8 +27,8 @@ plugins {
 //}
 
 dependencies {
-  api deps.kotlin.stdlibjdk8
-
-  testImplementation deps.test.junit
-  testImplementation deps.test.truth
+  api("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+  implementation("com.apollographql.apollo:apollo-runtime:2.0.1")
+  testImplementation("junit:junit:4.13")
+  testImplementation("com.google.truth:truth:1.0.1")
 }
